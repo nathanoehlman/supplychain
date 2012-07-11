@@ -1,0 +1,17 @@
+{
+  "author": "Nathan Oehlman",
+  "name": "supplychain",
+  "description": "SupplyChain sample economy game",
+  "version": "0.0.0",
+  "repository": {
+    "url": ""
+  },
+  "engines": {
+    "node": "~0.6.12"
+  },
+  "dependencies": {
+    "gamebase-gameserver": "https://github.com/nathanoehlman/gamebase-gameserver/tarball/master",
+    "gamebase-economy": "https://github.com/nathanoehlman/gamebase-economy/tarball/master"
+  },
+  "devDependencies": {}
+}
