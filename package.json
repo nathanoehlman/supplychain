@@ -10,8 +10,11 @@
     "node": "~0.6.12"
   },
   "dependencies": {
+    "config": "*",
     "gamebase-gameserver": "https://github.com/nathanoehlman/gamebase-gameserver/tarball/master",
-    "gamebase-economy": "https://github.com/nathanoehlman/gamebase-economy/tarball/master"
+    "gamebase-economy": "https://github.com/nathanoehlman/gamebase-economy/tarball/master",
+    "interleave": "~0.2.2",
+    "interleave-collate": "*"
   },
   "devDependencies": {}
 }

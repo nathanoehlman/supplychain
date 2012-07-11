@@ -1,0 +1,26 @@
+#game {
+    height: 500px;
+    width: 800px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    background: #EEE;
+    border: 1px solid #CCC;
+    padding: 1em;
+}
+
+.splash {
+    text-align: center;
+    min-height: 200px;
+}
+
+.splash .title {
+    font-size: 1.5em;
+    font-weight:bold;
+    margin-bottom:1em;
+    margin-top:1em;
+}
+
+.splash .message {
+    
+}

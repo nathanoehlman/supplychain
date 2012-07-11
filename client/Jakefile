@@ -1,0 +1,17 @@
+var interleave = require('interleave'),
+    aliases = {
+        'messages': 'github://NathanOehlman/gamebase-gameserver/shared/pkg/raw/Messages.js',
+        'resources': 'resources://'
+    };
+    
+
+desc('build the client files');
+task('dev', function() {
+    interleave(['src/supplychain.js'], {
+        multi: 'pass',
+        path: 'app',
+        aliases: aliases
+    });
+});
+
+task('default', ['dev']);
