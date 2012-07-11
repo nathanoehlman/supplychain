@@ -1,5 +1,6 @@
 var config = require('config'),
     GameServer = require('gamebase-gameserver'),
+    SupplyChainGame = require('./lib/game'),
     server;
 
 /**
@@ -8,6 +9,7 @@ var config = require('config'),
 function SupplyChainServer(config) {
     this.server = null;
     this.config = config;
+    this.games = [];
 }
 
 SupplyChainServer.prototype.start = function() {    
@@ -20,6 +22,10 @@ SupplyChainServer.prototype.start = function() {
     });
     this.server.on('clientConnected', function(client) {
         console.log('Client connected');
+    });
+    
+    this.server.on('gameCreated', function(game) {
+        me.games.push(new SupplyChainGame(game));
     });
 }
 

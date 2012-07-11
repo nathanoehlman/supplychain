@@ -35,6 +35,11 @@ MainScreen.prototype.displayConnected = function() {
         eve('client.newGame', null, gameName);
         return false;
     });
+    
+    $('button.join', this.container).live('click', function(evt) {
+       var game = $(this).attr('data-game');
+       eve('client.join', null, game);
+    });
 
 }
 

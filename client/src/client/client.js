@@ -11,6 +11,8 @@ function SupplyChainClient(serverUrl, options) {
     
     eve.on('client.connect', _.bind(this.connect, this));
     eve.on('client.newGame', _.bind(this.newGame, this));
+    eve.on('client.join', _.bind(this.join, this));
+    
 }
 
 SupplyChainClient.prototype.connect = function() {
@@ -69,4 +71,8 @@ SupplyChainClient.prototype.refreshGameList = function() {
 SupplyChainClient.prototype.newGame = function(name) {
     this.connection.send(LobbyMessage.format(10, 1, {gameName: name}));
     this.refreshGameList();
+}
+
+SupplyChainClient.prototype.join = function(game) {
+    
 }

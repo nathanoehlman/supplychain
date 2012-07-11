@@ -12224,7 +12224,7 @@ var _templates = {
   'main/connect': '<form class="form-horizontal" id="connectForm"><div class="control-group"><label class="control-label" for="playerName">Player Name:</label><div class="controls"><input type="text" name="playerName" id="playerName"/><input type="submit" id="btnConnect" value="Connect"/></div></div></form>',
   'main/connected': '<div class="connected"><h3>Join game</h3><div class="gamelist">Loading games...</div><div class="actions"><h3>Create game</h2><form id="newGame"><div class="control-group"><label class="control-label" for="gameName">Game Name:</label><div class="controls"><input type="text" name="gameName" id="gameName"/><input type="submit" id="btnNewGame" value="Create"/></div></div></form></div></div>',
   'main/connecting': '<h2>Connecting to server</h2>',
-  'main/gameList': '{{#each games}}<div class="game">{{name}} ({{currentPlayers}}/{{maxPlayers}}) <button>Join</button></div>{{/each}}',
+  'main/gameList': '{{#each games}}<div class="game">{{name}} ({{currentPlayers}}/{{maxPlayers}}) <button class="join" data-game="{{name}}">Join</button></div>{{/each}}',
   'main': '<div class="main"><div class="splash"><div class="title">Supply Chain</div><div class="message">Welcome to Supply Chain - a demonstration game about economies using the Gamebase game creation components by Nathan Oehlman (@noehlman)</div></div><div class="options"></div></div>'
 };
 
@@ -12450,6 +12450,11 @@ MainScreen.prototype.displayConnected = function() {
         var gameName = $('#newGame #gameName').val();
         eve('client.newGame', null, gameName);
         return false;
+    });
+    
+    $('button.join', this.container).live('click', function(evt) {
+       var game = $(this).attr('data-game');
+       console.log(game);
     });
 
 }
